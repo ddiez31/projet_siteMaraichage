@@ -6,7 +6,7 @@
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="retour">
-                <a href='/selectionPanier' class="btn btn-primary">Retour</a>
+                <a href='/selectionPanier' class="btn btn-primary">Retourrr</a>
                 <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
                 Retour Menu</a>
             </div>
@@ -22,7 +22,7 @@
                         <span style="text-align:center;"><a href="/details/recette/{{ $bestResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
                         {{ $bestResult['name'] }}
                         <br>
-                        <ul>matching:
+                        <ul>Correspondent :
                             @foreach($bestResult['matching'] as $matching)
                                 <li>{{ $matching }}</li>
                             @endforeach
@@ -46,20 +46,20 @@
                         <span style="text-align:center;"><a href="/details/recette/{{ $goodResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
                             {{ $goodResult['name'] }}
                             <br>
-                            <ul>Matching:
+                            <ul>Correspondent :
                                 @foreach($goodResult['matching'] as $matching)
                                     <li>{{ $matching }}</li>
                                 @endforeach
                             </ul>
                             @if($goodResult['missingVegiesForRecipe'])
-                            <ul>Manquant:
+                            <ul>Manquant :
                                 @foreach($goodResult['missingVegiesForRecipe'] as $missing)
                                     <li>{{ $missing }}</li>
                                 @endforeach
                             </ul>
                             @endif
                             @if($goodResult['nonMatching'])
-                            <ul>En trop:
+                            <ul>En trop :
                                 @foreach($goodResult['nonMatching'] as $nonMatching)
                                     <li>{{ $nonMatching }}</li>
                                 @endforeach
@@ -85,20 +85,20 @@
                             {{ $junkResult['name'] }}
                             <br>
                             @if ($junkResult['matching'])
-                            <ul>Matching:
+                            <ul>Correspondent :
                                 @foreach($junkResult['matching'] as $matching)
                                     <li>{{ $matching }}</li>
                                 @endforeach
                             </ul>
                             @endif
+                            <ul>Manquant :
+                                @foreach($junkResult['missingVegiesForRecipe'] as $missing)
+                                    <li>{{ $missing }}</li>
+                                @endforeach
+                            </ul>
                             <ul>En trop:
                                 @foreach($junkResult['nonMatching'] as $nonMatching)
                                     <li>{{ $nonMatching }}</li>
-                                @endforeach
-                            </ul>
-                            <ul>Manquant:
-                                @foreach($junkResult['missingVegiesForRecipe'] as $missing)
-                                    <li>{{ $missing }}</li>
                                 @endforeach
                             </ul>
                         </div>
